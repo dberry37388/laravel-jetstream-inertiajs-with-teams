@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\HasNanoId;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -15,10 +16,19 @@ class User extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;
+    use HasNanoId;
     use HasProfilePhoto;
     use HasTeams;
     use Notifiable;
     use TwoFactorAuthenticatable;
+
+    protected string $nanoIdFieldName = 'uid';
+    protected string $nanoIdPrefix = 'user_';
+
+    public function getRouteKeyName(): string
+    {
+        return 'uid';
+    }
 
     /**
      * The attributes that are mass assignable.
