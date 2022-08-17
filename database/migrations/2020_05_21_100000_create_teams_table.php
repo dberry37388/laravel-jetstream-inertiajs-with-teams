@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
+            $table->string('uid')->unique();
             $table->foreignId('user_id')->index();
             $table->string('name');
             $table->boolean('personal_team');
