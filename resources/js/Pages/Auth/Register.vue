@@ -8,6 +8,11 @@ import JetCheckbox from '@/Components/Checkbox.vue';
 import JetLabel from '@/Components/Label.vue';
 import JetValidationErrors from '@/Components/ValidationErrors.vue';
 
+defineProps({
+    teamInvitation: String,
+});
+
+
 const form = useForm({
     name: '',
     email: '',
@@ -30,6 +35,13 @@ const submit = () => {
         <template #logo>
             <JetAuthenticationCardLogo />
         </template>
+
+        <div v-if="teamInvitation" class="my-3 bg-gray-100 border border-gray-200 p-5 rounded-lg">
+            <h4>
+                Register or <a class="underline hover:text-gray-900" :href="route('login')">login</a>
+                to join <strong class="text-blue-800">{{ teamInvitation }}</strong>.
+            </h4>
+        </div>
 
         <JetValidationErrors class="mb-4" />
 

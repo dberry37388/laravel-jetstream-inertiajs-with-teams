@@ -11,6 +11,7 @@ import JetValidationErrors from '@/Components/ValidationErrors.vue';
 defineProps({
     canResetPassword: Boolean,
     status: String,
+    teamInvitation: String,
 });
 
 const form = useForm({
@@ -36,6 +37,13 @@ const submit = () => {
         <template #logo>
             <JetAuthenticationCardLogo />
         </template>
+
+        <div v-if="teamInvitation" class="my-3 bg-gray-100 border border-gray-200 p-5 rounded-lg">
+            <h4>
+                Log in or <a class="underline hover:text-gray-900" :href="route('register')">register</a>
+                to join <strong class="text-blue-800">{{ teamInvitation }}</strong>.
+            </h4>
+        </div>
 
         <JetValidationErrors class="mb-4" />
 

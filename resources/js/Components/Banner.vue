@@ -6,6 +6,8 @@ const show = ref(true);
 const style = computed(() => usePage().props.value.jetstream.flash?.bannerStyle || 'success');
 const message = computed(() => usePage().props.value.jetstream.flash?.banner || '');
 
+setTimeout(() => show.value = false, 5000);
+
 watch(message, async () => {
   show.value = true;
 });
