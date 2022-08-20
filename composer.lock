@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e7f94f6986d82fe3f0c7c3d5d19bdb2b",
+    "content-hash": "3ba996e0039b47a647a6c86d4896f4a6",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -6280,6 +6280,70 @@
                 "source": "https://github.com/barryvdh/ReflectionDocBlock/tree/v2.0.6"
             },
             "time": "2018-12-13T10:34:14+00:00"
+        },
+        {
+            "name": "codenco-dev/eloquent-model-tester",
+            "version": "V2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codenco-dev/eloquent-model-tester.git",
+                "reference": "02b330155441cc7a71befc5e7472e1045b1c9d55"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codenco-dev/eloquent-model-tester/zipball/02b330155441cc7a71befc5e7472e1045b1c9d55",
+                "reference": "02b330155441cc7a71befc5e7472e1045b1c9d55",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.0|^9.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CodencoDev\\EloquentModelTester\\ModelTesterServiceProvider"
+                    ],
+                    "aliases": {
+                        "ModelTester": "CodencoDev\\EloquentModelTester\\ModelTesterFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CodencoDev\\EloquentModelTester\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dominic THOMAS",
+                    "email": "dthomas@codenco.fr",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Test easier your Eloquent Models in your Laravel Project",
+            "homepage": "https://github.com/thomasdominic/eloquent-model-tester",
+            "keywords": [
+                "eloquent",
+                "eloquent-model-tester",
+                "laravel",
+                "relation",
+                "thomasdominic"
+            ],
+            "support": {
+                "issues": "https://github.com/codenco-dev/eloquent-model-tester/issues",
+                "source": "https://github.com/codenco-dev/eloquent-model-tester/tree/V2.5.0"
+            },
+            "time": "2022-02-18T17:25:14+00:00"
         },
         {
             "name": "composer/pcre",
