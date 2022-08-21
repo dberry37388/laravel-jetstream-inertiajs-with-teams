@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('team_id');
             $table->foreignId('user_id');
-            $table->string('role')->nullable();
+            $table->string('role')->default('editor');
             $table->timestamps();
 
             $table->unique(['team_id', 'user_id']);
@@ -25,7 +25,7 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migration`s.
      *
      * @return void
      */

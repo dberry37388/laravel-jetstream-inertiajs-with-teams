@@ -2,7 +2,8 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Team;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,11 +15,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $user = \App\Models\User::factory()
+             ->withPersonalTeam()
+             ->create([
+                 'name' => 'Test User',
+                 'email' => 'test@example.com',
+             ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+         Team::factory()
+             ->has(User::factory()
+                 ->withPersonalTeam()
+                 ->count(10))
+             ->create([
+                 'user_id' => $user->id
+             ]);
     }
 }
